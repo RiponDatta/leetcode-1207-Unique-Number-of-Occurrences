@@ -16,11 +16,11 @@ public static bool UniqueOccurrences(int[] arr)
         else
             frequency.Add(arr[i], 1);
     }
-    var freqOccurrences = new Hashtable();
+    var freqOccurrences = new HashSet<int>();
     foreach (var x in frequency)
     {
         if (!freqOccurrences.Contains(x.Value))
-            freqOccurrences.Add(x.Value, 1);
+            freqOccurrences.Add(x.Value);
         else return false;
     }
     return true;
